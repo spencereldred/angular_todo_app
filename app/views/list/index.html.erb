@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-9"><h1>Todo List</h1></div>
+</div>
+<div ng-controller="TodoCtrl">
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6"><h3>Add Item</h3></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="newTodo.description">
+        <input type="submit" value="Add Item" class="btn btn-primary btn-sm">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-7"><h3>Things Left To Do</h3></div>
+  </div>
+  <ul>
+    <div ng-repeat="todo in todos | filter: {done: false}">
+      <div class="row">
+        <li class="col-sm-offset-3 col-sm-6 item">
+          <input type="checkbox" ng-click="checkbox()" ng-model="todo.done">
+          {{todo.description}}, done: {{todo.done}}
+        </li>
+      </div>
+    </div>
+  </ul>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-7"><h3>Things That are Done</h3></div>
+  </div>
+  <ul>
+    <div ng-repeat="todo in todos | filter: {done: true}">
+      <div class="row">
+        <li class="col-sm-offset-3 col-sm-6 item">
+          <input type="checkbox" ng-click="checkbox()" checked>
+          {{todo.description}}, done: {{todo.done}}
+        </li>
+      </div>
+    </div>
+  </ul>
+
+</div>
