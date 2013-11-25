@@ -20,8 +20,8 @@
     <div ng-repeat="todo in todos | filter: {done: false}">
       <div class="row">
         <li class="col-sm-offset-3 col-sm-6 item">
-          <input type="checkbox" ng-click="checkbox()" ng-model="todo.done">
-          {{todo.description}}, done: {{todo.done}}
+          <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" >
+            {{todo.description}}, done: {{todo.done}}
         </li>
       </div>
     </div>
@@ -33,8 +33,8 @@
     <div ng-repeat="todo in todos | filter: {done: true}">
       <div class="row">
         <li class="col-sm-offset-3 col-sm-6 item">
-          <input type="checkbox" ng-click="checkbox()" checked>
-          {{todo.description}}, done: {{todo.done}}
+          <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" checked>
+            {{todo.description}}, done: {{todo.done}}
         </li>
       </div>
     </div>
