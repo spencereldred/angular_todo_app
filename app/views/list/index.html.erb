@@ -1,16 +1,23 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-offset-3 col-sm-6"><h1>Todo List</h1></div>
+    <!-- Directive "todotitle": creates the "todotitle" element -->
+    <div class="col-sm-offset-3 col-sm-6"><todotitle></todotitle></div>
   </div>
 </div>
+
+<!-- Controller: TodoCtrl  "ng-controller" -->
 <div ng-controller="TodoCtrl">
+
   <div class="container">
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-6"><h3>Add Item</h3></div>
+      <div class="col-sm-offset-3 col-sm-6"><additem></additem></div>
     </div>
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-6">
+      <div class="col-sm-offset-3 col-sm-3">
+
+        <!-- Submit: calls "addTodo()" function inside controller - "ng-submit" -->
         <form ng-submit="addTodo()">
+          <!-- Input: is tied to the "description" field in the "newTodo" model -->
           <input type="text" ng-model="newTodo.description">
           <input type="submit" value="Add Item" class="btn btn-primary btn-sm">
         </form>
@@ -19,12 +26,19 @@
   </div>
   <div class="container" >
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-3"><h3>Things Left To Do</h3></div>
+      <div class="col-sm-offset-3 col-sm-3"><undonelist></undonelist></div>
     </div>
     <ul>
+
+      <!-- Display: To Do items with a filter "done = false" (i.e. not done yet) -->
+      <!-- Loop through todos using "ng-repeat" -->
       <div ng-repeat="todo in todos | filter: {done: false}">
         <div class="row">
           <li class="col-sm-offset-3 col-sm-6 item">
+
+            <!-- Action Listener: call checkbox() function on click - "ng-click" -->
+            <!-- checkbox() function updates the database in the background -->
+            <!-- Update model: set the boolean "done" property to true - "ng-model" -->
             <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" >
               {{todo.description}}
           </li>
@@ -34,12 +48,16 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-3"><h3>Things That are Done</h3></div>
+      <div class="col-sm-offset-3 col-sm-3"><donelist></donelist></div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: true}">
         <div class="row">
           <li class="col-sm-offset-3 col-sm-6 item">
+
+            <!-- Action Listener: call checkbox() function on click - "ng-click"-->
+            <!-- checkbox() function updates the database in the background -->
+            <!-- Update model: set the boolean "done" property to false - "ng-model" -->
             <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" checked>
               {{todo.description}}
           </li>
