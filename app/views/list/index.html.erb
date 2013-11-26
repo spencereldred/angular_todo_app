@@ -18,7 +18,7 @@
         <!-- Submit: calls "addTodo()" function inside controller - "ng-submit" -->
         <form ng-submit="addTodo()">
           <!-- Input: is tied to the "description" field in the "newTodo" model -->
-          <input type="text" ng-model="newTodo.description">
+          <input type="text" ng-model="newTodo.description" superman>
           <input type="submit" value="Add Item" class="btn btn-primary btn-sm">
         </form>
       </div>
@@ -39,7 +39,8 @@
             <!-- Action Listener: call checkbox() function on click - "ng-click" -->
             <!-- checkbox() function updates the database in the background -->
             <!-- Update model: set the boolean "done" property to true - "ng-model" -->
-            <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" >
+            <todocheckbox></todocheckbox>
+            <!-- <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" > -->
               {{todo.description}}
           </li>
         </div>
@@ -58,7 +59,8 @@
             <!-- Action Listener: call checkbox() function on click - "ng-click"-->
             <!-- checkbox() function updates the database in the background -->
             <!-- Update model: set the boolean "done" property to false - "ng-model" -->
-            <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" checked>
+            <todocheckbox></todocheckbox>
+            <!-- <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" > -->
               {{todo.description}}
           </li>
         </div>

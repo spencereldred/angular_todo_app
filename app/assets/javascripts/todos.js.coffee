@@ -25,6 +25,19 @@ app.directive "donelist", () ->
   restrict: "E",
   template: "<h3>Things That are Done</h3>"
 
+app.directive "todocheckbox", () ->
+  restrict: "E",
+  template: "<input type='checkbox' ng-click='checkbox()' ng-model='todo.done' >"
+
+# app.directive "superman", () ->
+#   restrict: "A",
+#   link: ->
+#     alert "I'm superman!"
+
+# shorthand syntax for an attribute directive
+# app.directive "superman", () ->
+#   ->
+#     alert "I'm superman!"
 
 # Controller "TodoCtrl" functions
 @TodoCtrl = ($scope, Todos) ->
