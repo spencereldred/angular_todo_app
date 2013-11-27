@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <!-- Directive "todotitle": creates the "todotitle" element -->
-    <div class="col-sm-offset-3 col-sm-6"><todotitle></todotitle></div>
+    <div class="col-md-offset-3 col-md-6"><todotitle></todotitle></div>
   </div>
 </div>
 
@@ -10,10 +10,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-6"><additem></additem></div>
+      <div class="col-md-offset-3 col-md-6"><additem></additem></div>
     </div>
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-3">
+      <div class="col-md-offset-3 col-md-4">
 
         <!-- Submit: calls "addTodo()" function inside controller - "ng-submit" -->
         <form ng-submit="addTodo()">
@@ -26,7 +26,7 @@
   </div>
   <div class="container" >
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-3"><undonelist></undonelist></div>
+      <div class="col-md-offset-3 col-md-4"><undonelist></undonelist></div>
     </div>
     <ul>
 
@@ -34,7 +34,7 @@
       <!-- Loop through todos using "ng-repeat" -->
       <div ng-repeat="todo in todos | filter: {done: false}">
         <div class="row">
-          <li class="col-sm-offset-3 col-sm-6 item">
+          <li class="col-md-offset-3 col-md-6 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click" -->
             <!-- checkbox() function updates the database in the background -->
@@ -49,19 +49,19 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-sm-offset-3 col-sm-3"><donelist></donelist></div>
+      <div class="col-md-offset-3 col-md-3"><donelist></donelist></div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: true}">
         <div class="row">
-          <li class="col-sm-offset-3 col-sm-6 item">
+          <li class="col-md-offset-3 col-md-6 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click"-->
             <!-- checkbox() function updates the database in the background -->
             <!-- Update model: set the boolean "done" property to false - "ng-model" -->
             <todocheckbox></todocheckbox>
             <!-- <input type="checkbox" ng-click="checkbox()" ng-model="todo.done" > -->
-              {{todo.description}}
+              {{todo.description}}<a id="delete" href="#" ng-click="delete_todo()"> Delete</a>
           </li>
         </div>
       </div>

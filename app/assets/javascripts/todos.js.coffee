@@ -19,11 +19,11 @@ app.directive "additem", () ->
 
 app.directive "undonelist", () ->
   restrict: "E",
-  template: "<h3>Things Left To Do</h3>"
+  template: "<h3>To Do Items</h3>"
 
 app.directive "donelist", () ->
   restrict: "E",
-  template: "<h3>Things That are Done</h3>"
+  template: "<h3>Done Items</h3>"
 
 app.directive "todocheckbox", () ->
   restrict: "E",
@@ -71,6 +71,7 @@ app.directive "todocheckbox", () ->
   # Function "delete_todo()" - "DELETE - remove() or delete()"
   $scope.delete_todo = ->
     todo = @todo
+    todos = $scope.todos
 
     # remove the todo item from the view
     # find index of todo in todos

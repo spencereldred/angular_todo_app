@@ -1,3 +1,8 @@
 .item {
   list-style-type: none;
 }
+
+#delete {
+  text-decoration: none;
+  margin-left: 5px;
+}
