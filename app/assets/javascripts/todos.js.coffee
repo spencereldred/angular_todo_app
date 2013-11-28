@@ -7,7 +7,6 @@ app = angular.module("Todos", ["ngResource"])
 app.factory "Todos", ($resource) ->
   $resource("/todos/:id.json", {id: "@id"}, {update: {method: "PUT"}})
 
-
 # Directives: create template elements
 app.directive "todotitle", () ->
   restrict: "E",
@@ -28,16 +27,6 @@ app.directive "donelist", () ->
 app.directive "todocheckbox", () ->
   restrict: "E",
   template: "<input type='checkbox' ng-click='checkbox()' ng-model='todo.done' >"
-
-# app.directive "superman", () ->
-#   restrict: "A",
-#   link: ->
-#     alert "I'm superman!"
-
-# shorthand syntax for an attribute directive
-# app.directive "superman", () ->
-#   ->
-#     alert "I'm superman!"
 
 # Controller "TodoCtrl" functions
 @TodoCtrl = ($scope, Todos) ->
@@ -84,6 +73,10 @@ app.directive "todocheckbox", () ->
 
     # delete the "todo" record from the database
     todo.$remove()
+
+
+
+
 
 
 
