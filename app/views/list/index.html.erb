@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <!-- Directive "todotitle": creates the "todotitle" element -->
-    <div class="col-md-offset-3 col-md-6"><todotitle></todotitle></div>
+    <div class="col-xs-offset-2 col-xs-8"><todotitle></todotitle></div>
   </div>
 </div>
 
@@ -10,10 +10,10 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-3 col-md-6" enter="sayHello()" superman><additem></additem></div>
+      <div class="col-xs-offset-2 col-xs-6" enter="sayHello()" superman><additem></additem></div>
     </div>
     <div class="row">
-      <div class="col-md-offset-3 col-md-4">
+      <div class="col-xs-offset-2 col-xs-4">
 
         <!-- Submit: calls "addTodo()" function inside controller - "ng-submit" -->
         <form ng-submit="addTodo()">
@@ -27,7 +27,7 @@
   </div>
   <div class="container" >
     <div class="row">
-      <div class="col-md-offset-3 col-md-4"><undonelist></undonelist></div>
+      <div class="col-xs-offset-2 col-xs-7"><undonelist></undonelist></div>
     </div>
     <ul>
 
@@ -35,7 +35,7 @@
       <!-- Loop through todos using "ng-repeat" -->
       <div ng-repeat="todo in todos | filter: {done: false}">
         <div class="row">
-          <li class="col-md-offset-3 col-md-6 item">
+          <li class="col-xs-offset-2 col-xs-6 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click" -->
             <!-- checkbox() function updates the database in the background -->
@@ -50,12 +50,12 @@
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-3 col-md-3"><donelist></donelist></div>
+      <div class="col-xs-offset-2 col-xs-6"><donelist></donelist></div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: true}">
         <div class="row">
-          <li class="col-md-offset-3 col-md-6 item">
+          <li class="col-xs-offset-2 col-xs-8 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click"-->
             <!-- checkbox() function updates the database in the background -->
