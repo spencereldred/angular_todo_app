@@ -5,6 +5,7 @@
 #delete {
   text-decoration: none;
   margin-left: 5px;
+  font-size: 18px;
 }
 
 #my-title {
@@ -12,7 +13,7 @@
 }
 
 #input-item {
-  width: 60%;
+  width: 40%;
 }
 
 #item-list {
@@ -21,4 +22,11 @@
 
 #future-items {
   color: grey;
+}
+#todo-item {
+  font-size: 22px;
+}
+#done-todo {
+  font-size: 22px;
+  text-decoration: line-through;
 }
