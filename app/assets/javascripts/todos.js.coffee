@@ -10,19 +10,19 @@ app.factory "Todos", ($resource) ->
 # Directives: create template elements
 app.directive "todotitle", () ->
   restrict: "E",
-  template: "<h1>To Do List</h1>"
+  template: "<h1>Da Costco List</h1>"
 
 app.directive "additem", () ->
   restrict: "E",
-  template: "<h3>Add Item</h3>"
+  template: "<h2>Add Item</h2>"
 
 app.directive "undonelist", () ->
   restrict: "E",
-  template: "<h3>To Do Items</h3>"
+  template: "<h2>Shopping List</h2>"
 
 app.directive "donelist", () ->
   restrict: "E",
-  template: "<h3>Done Items</h3>"
+  template: "<h2>Future Items</h2>"
 
 app.directive "todocheckbox", () ->
   restrict: "E",

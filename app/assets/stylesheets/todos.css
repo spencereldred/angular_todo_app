@@ -1,0 +1,24 @@
+.item {
+  list-style-type: none;
+}
+
+#delete {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+#my-title {
+  color: green;
+}
+
+#input-item {
+  width: 60%;
+}
+
+#item-list {
+  color: blue;
+}
+
+#future-items {
+  color: grey;
+}

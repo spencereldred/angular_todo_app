@@ -1,33 +1,27 @@
-<div class="container">
-  <div class="row">
-    <!-- Directive "todotitle": creates the "todotitle" element -->
-    <div class="col-xs-offset-2 col-xs-8"><todotitle></todotitle></div>
-  </div>
-</div>
-
 <!-- Controller: TodoCtrl  "ng-controller" -->
 <div ng-controller="TodoCtrl">
-
   <div class="container">
+    <br><br><br><br>
     <div class="row">
-      <div class="col-xs-offset-2 col-xs-6" enter="sayHello()" superman><additem></additem></div>
+      <!-- Directive "todotitle": creates the "todotitle" element -->
+      <div class="col-sm-offset-4 col-sm-8"><todotitle id="my-title"></todotitle></div>
     </div>
     <div class="row">
-      <div class="col-xs-offset-2 col-xs-4">
-
+      <div class="col-sm-offset-4 col-sm-8"><additem id="add-item"></additem></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-offset-4 col-sm-8">
         <!-- Submit: calls "addTodo()" function inside controller - "ng-submit" -->
         <form ng-submit="addTodo()">
-
           <!-- Input: is tied to the "description" field in the "newTodo" model -->
-          <input type="text" ng-model="newTodo.description" >
+          <input type="text" id="input-item" ng-model="newTodo.description" >
+          <p></p>
           <input type="submit" value="Add Item" class="btn btn-primary btn-sm">
         </form>
       </div>
     </div>
-  </div>
-  <div class="container" >
     <div class="row">
-      <div class="col-xs-offset-2 col-xs-7"><undonelist></undonelist></div>
+      <div class="col-sm-offset-4 col-sm-8"><undonelist id="item-list"></undonelist></div>
     </div>
     <ul>
 
@@ -35,7 +29,7 @@
       <!-- Loop through todos using "ng-repeat" -->
       <div ng-repeat="todo in todos | filter: {done: false}">
         <div class="row">
-          <li class="col-xs-offset-2 col-xs-6 item">
+          <li class="col-sm-offset-4 col-sm-8 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click" -->
             <!-- checkbox() function updates the database in the background -->
@@ -47,15 +41,13 @@
         </div>
       </div>
     </ul>
-  </div>
-  <div class="container">
     <div class="row">
-      <div class="col-xs-offset-2 col-xs-6"><donelist></donelist></div>
+      <div class="col-sm-offset-4 col-sm-8"><donelist id="future-items"></donelist></div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: true}">
         <div class="row">
-          <li class="col-xs-offset-2 col-xs-8 item">
+          <li class="col-sm-offset-4 col-sm-8 item">
 
             <!-- Action Listener: call checkbox() function on click - "ng-click"-->
             <!-- checkbox() function updates the database in the background -->
