@@ -24,9 +24,13 @@ app.directive "donelist", () ->
   restrict: "E",
   template: "<h2>Future Items</h2>"
 
-app.directive "todocheckbox", () ->
+app.directive "doneButton", () ->
   restrict: "E",
-  template: "<input type='checkbox' ng-click='checkbox()' ng-model='todo.done' >"
+  template: "<button class='btn btn-success btn-sm' style='margin-bottom: 15px;' ng-click='update()' ng-model='todo.done'>Done</button>"
+
+app.directive "buyButton", () ->
+  restrict: "E",
+  template: "<button class='btn btn-primary btn-sm' style='margin-bottom: 15px;' ng-click='update()' ng-model='todo.done'>Buy</button>"
 
 # Controller "TodoCtrl" functions
 @TodoCtrl = ($scope, Todos) ->
@@ -50,9 +54,10 @@ app.directive "todocheckbox", () ->
     $scope.newTodo = {}
 
   # Function "checkbox()" - "PUT - update()"
-  $scope.checkbox = ->
+  $scope.update = ->
     # assign the todo item that was clicked "this.todo" to the "todo" variable
     todo = @todo
+    todo.done = !todo.done
 
     # PUT an update to the database
     todo.$update()
