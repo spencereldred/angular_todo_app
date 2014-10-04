@@ -27,7 +27,7 @@
 
       <!-- Display: To Do items with a filter "done = false" (i.e. not done yet) -->
       <!-- Loop through todos using "ng-repeat" -->
-      <div ng-repeat="todo in todos | filter: {done: false}">
+      <div ng-repeat="todo in todos | filter: {done: false} | orderBy:'description'">
         <div class="row">
           <li class="col-sm-offset-4 col-sm-8 item">
 
@@ -45,7 +45,7 @@
       <div class="col-sm-offset-4 col-sm-8"><donelist id="future-items"></donelist></div>
     </div>
     <ul>
-      <div ng-repeat="todo in todos | filter: {done: true}">
+      <div ng-repeat="todo in todos | filter: {done: true} | orderBy:'description'">
         <div class="row">
           <li class="col-sm-offset-4 col-sm-8 item">
 
