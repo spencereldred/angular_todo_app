@@ -2,17 +2,17 @@
   <div class="container">
     <br><br>
     <div class="row">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-1 col-sm-11">
         <todotitle id="my-title"></todotitle>
       </div>
     </div>
     <!-- <div class="row">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-1 col-sm-11">
         <additem id="add-item"></additem>
       </div>
     </div> -->
     <div class="row">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-1 col-sm-11">
         <form ng-submit="addTodo()">
           <input type="submit" value="Add Item" class="btn btn-primary" style="font-size: 30px;">
           <p></p>
@@ -21,12 +21,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-offset-2 col-sm-10"><undonelist id="item-list"></undonelist></div>
+      <div class="col-sm-offset-1 col-sm-11"><undonelist id="item-list"></undonelist></div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: false} | orderBy:'description'">
         <div class="row">
-          <li class="col-sm-offset-2 col-sm-10 item">
+          <li class="col-sm-offset-1 col-sm-11 item">
             <done-button></done-button>&nbsp;&nbsp;
               <span id="todo-item">{{todo.description}}</span>
           </li>
@@ -34,14 +34,14 @@
       </div>
     </ul>
     <div class="row">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-1 col-sm-11">
         <donelist id="future-items"></donelist>
       </div>
     </div>
     <ul>
       <div ng-repeat="todo in todos | filter: {done: true} | orderBy:'description'">
         <div class="row">
-          <li class="col-sm-offset-2 col-sm-10 item">
+          <li class="col-sm-offset-1 col-sm-11 item">
             <buy-button></buy-button>&nbsp;&nbsp;
               <span id="done-todo">{{todo.description}}</span><a id="delete" href="#" ng-click="delete_todo()"> Delete</a>
           </li>
