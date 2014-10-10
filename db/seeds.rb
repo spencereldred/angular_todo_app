@@ -9,7 +9,7 @@ todos = Todo.create([
   {description: "Craisins", done: true},
   {description: "Dishwasher Pellets", done: true},
   {description: "Emergen-C", done: true},
-  {description: "Garbage Bags - 30 gal", done: true},
+  {description: "Garbage Bags(33 gal)", done: true},
   {description: "Hemp Seeds", done: true},
   {description: "Kettle Chips", done: true},
   {description: "Laundry Soap", done: true},
